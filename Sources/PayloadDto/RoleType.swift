@@ -95,10 +95,33 @@ public enum RoleType: String, CustomStringConvertible, Codable {
         case .administrator:
             return ["Profile.update.root": true, "Profile.update.setAdmin": false, "Profile.update.setBlock": true]
         case .owner:
-            return ["Profile.update.root": true, "Profile.update.setAdmin": true, "Profile.update.setBlock": true]
+            return ["Profile.update.root": true, "Profile.update.setAdmin": true, "Profile.update.setBlock": true, "Profile.update.setRole": true]
         // MARK: - superuser permission
         case .superuser:
-            return ["Profile.update.root": true, "Profile.update.setAdmin": true, "Profile.update.setBlock": true]
+            return [:]
+        }
+    }
+    
+    public func getRole(from role: String) -> RoleType? {
+        switch role {
+        case "guest":
+            return .guest
+        case "client":
+            return .client
+        case "wholesaleBuyer":
+            return .wholesaleBuyer
+        case "seller":
+            return .seller
+        case "manager":
+            return .manager
+        case "accountant":
+            return .accountant
+        case "administrator":
+            return .administrator
+        case "owner":
+            return .owner
+        default:
+            return nil
         }
     }
 }
