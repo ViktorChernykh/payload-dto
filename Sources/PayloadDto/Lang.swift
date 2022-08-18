@@ -8,7 +8,8 @@
 import Foundation
 
 public struct Lang: Codable {
-    public var languages = [
+    public var languages: [String: String] {
+    [
         "ab": "Abkhazian",
         "aa": "Afar",
         "af": "Afrikaans",
@@ -192,8 +193,8 @@ public struct Lang: Codable {
         "yo": "Yoruba",
         "za": "Zhuang, Chuang",
         "zu": "Zulu"]
-    
-    public var langs = [
+    }
+    public static let langs = [
         "ab",
         "aa",
         "af",
