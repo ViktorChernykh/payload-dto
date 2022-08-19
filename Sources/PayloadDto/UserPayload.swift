@@ -10,11 +10,10 @@ import Foundation
 /// Payload data for micro services
 public struct UserPayload: Codable {
     // MARK: - Stored properties
+    public let currency: String
     public let exp: Double
     public let jti: UUID
-    public let iat: Double // init at
     public let companyId: UUID
-    public let domain: String
     public let isAdmin: Bool
     public let lang: String
     public let role: RoleType
@@ -24,11 +23,10 @@ public struct UserPayload: Codable {
     
     // MARK: - Init
     public init(
+        currency: String,
         exp: Double,
         jti: UUID,
-        iat: Double,
         companyId: UUID,
-        domain: String,
         isAdmin: Bool,
         lang: String,
         role: RoleType,
@@ -36,11 +34,10 @@ public struct UserPayload: Codable {
         sub: UUID,
         tariff: Tariff
     ) {
+        self.currency = currency
         self.exp = exp
         self.jti = jti
-        self.iat = iat
         self.companyId = companyId
-        self.domain = domain
         self.isAdmin = isAdmin
         self.lang = lang
         self.role = role
