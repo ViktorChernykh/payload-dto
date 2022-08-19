@@ -8,15 +8,16 @@
 public enum RoleType: String, CustomStringConvertible, Codable {
     public static let schema = "role_type"
     
-    case guest = "1"
-    case client = "2"
-    case wholesaleBuyer = "3"
-    case seller = "4"
-    case manager = "5"
-    case accountant = "6"
-    case administrator = "7"
-    case owner = "8"
-    case superuser = "9"
+    case guest = "0"
+    case client = "1"
+    case wholesaleBuyer = "2"
+    case seller = "3"
+    case manager = "4"
+    case accountant = "5"
+    case administrator = "6"
+    case owner = "7"
+    case superuser = "8"
+    case system = "9"
     
     public var description: String {
         switch self {
@@ -38,20 +39,23 @@ public enum RoleType: String, CustomStringConvertible, Codable {
             return "Owner."
         case .superuser:
             return "Superuser."
+        case .system:
+            return "System."
         }
     }
     
     public var value: Int {
         switch self {
-        case .guest:          return 1
-        case .client:         return 2
-        case .wholesaleBuyer: return 3
-        case .seller:         return 4
-        case .manager:        return 5
-        case .accountant:     return 6
-        case .administrator:  return 7
-        case .owner:          return 8
-        case .superuser:      return 9
+        case .guest:          return 0
+        case .client:         return 1
+        case .wholesaleBuyer: return 2
+        case .seller:         return 3
+        case .manager:        return 4
+        case .accountant:     return 5
+        case .administrator:  return 6
+        case .owner:          return 7
+        case .superuser:      return 8
+        case .system:         return 9
         }
     }
     
@@ -75,6 +79,8 @@ public enum RoleType: String, CustomStringConvertible, Codable {
             return "Owner"
         case .superuser:
             return "Superuser"
+        case .system:
+            return "System"
         }
     }
     
@@ -99,29 +105,8 @@ public enum RoleType: String, CustomStringConvertible, Codable {
         // MARK: - superuser permission
         case .superuser:
             return [:]
-        }
-    }
-    
-    public func getRole(from role: String) -> RoleType? {
-        switch role {
-        case "guest":
-            return .guest
-        case "client":
-            return .client
-        case "wholesaleBuyer":
-            return .wholesaleBuyer
-        case "seller":
-            return .seller
-        case "manager":
-            return .manager
-        case "accountant":
-            return .accountant
-        case "administrator":
-            return .administrator
-        case "owner":
-            return .owner
-        default:
-            return nil
+        case .system:
+            return [:]
         }
     }
 }
