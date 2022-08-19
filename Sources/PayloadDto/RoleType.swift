@@ -109,4 +109,23 @@ public enum RoleType: String, CustomStringConvertible, Codable {
             return [:]
         }
     }
+    
+    public func getRole(from role: String) -> RoleType? {
+        switch role {
+        case "client":
+            return .client
+        case "wholesaleBuyer":
+            return .wholesaleBuyer
+        case "seller":
+            return .seller
+        case "manager":
+            return .manager
+        case "accountant":
+            return .accountant
+        case "administrator":
+            return .administrator
+        default:
+            return nil
+        }
+    }
 }
