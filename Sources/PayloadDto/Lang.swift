@@ -5,8 +5,6 @@
 //  Created by Victor Chernykh on 29.03.2022.
 //
 
-import Foundation
-
 public struct Lang: Codable {
     public var languages: [String: String] {
     [
@@ -380,14 +378,8 @@ public struct Lang: Codable {
         "zu",
     ]
     
-//    public static func isNeedTranslate(for lang, on req: Request) -> String? {
-//        let payload = Payload.getPayload(on: req)
-//        guard payload.tariff == .unlimited, let lang = lang,
-//                lang != payload.defaultLang else {
-//            return nil
-//        }
-//        return Lang().languages[lang] == nil ? nil : lang
-//    }
+    // MARK: - Init
+    public init() { }
     
     public static func validate(lang: String?) -> String? {
         guard let lang = lang else { return nil }
