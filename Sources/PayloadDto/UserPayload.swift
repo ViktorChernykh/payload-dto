@@ -11,7 +11,6 @@ import Foundation
 public struct UserPayload: Codable {
     // MARK: - Stored properties
     public let currency: String
-    public let discount: Double
     public let exp: Double
     public let jti: UUID
     public let companyId: UUID
@@ -26,7 +25,6 @@ public struct UserPayload: Codable {
     // MARK: - Init
     public init(
         currency: String,
-        discount: Double,
         exp: Double,
         jti: UUID,
         companyId: UUID,
@@ -39,7 +37,6 @@ public struct UserPayload: Codable {
         tariff: Tariff
     ) {
         self.currency = currency
-        self.discount = discount
         self.exp = exp
         self.jti = jti
         self.companyId = companyId
