@@ -11,10 +11,12 @@ import Foundation
 public struct UserPayload: Codable {
     // MARK: - Stored properties
     public let currency: String
+    public let discount: Double
     public let exp: Double
     public let jti: UUID
     public let companyId: UUID
     public let isAdmin: Bool
+    public let isBusiness: Bool
     public let lang: String
     public let role: RoleType
     public let section: String
@@ -24,10 +26,12 @@ public struct UserPayload: Codable {
     // MARK: - Init
     public init(
         currency: String,
+        discount: Double,
         exp: Double,
         jti: UUID,
         companyId: UUID,
         isAdmin: Bool,
+        isBusiness: Bool,
         lang: String,
         role: RoleType,
         section: String,
@@ -35,10 +39,12 @@ public struct UserPayload: Codable {
         tariff: Tariff
     ) {
         self.currency = currency
+        self.discount = discount
         self.exp = exp
         self.jti = jti
         self.companyId = companyId
         self.isAdmin = isAdmin
+        self.isBusiness = isBusiness
         self.lang = lang
         self.role = role
         self.section = section
