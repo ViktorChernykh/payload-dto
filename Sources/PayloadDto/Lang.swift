@@ -6,7 +6,7 @@
 //
 
 public struct Lang: Codable {
-    public var languages: [String: String] {
+    public static var languages: [String: String] {
     [
         "ab": "Abkhazian",
         "aa": "Afar",
@@ -383,6 +383,6 @@ public struct Lang: Codable {
     
     public static func validate(lang: String?) -> String? {
         guard let lang = lang else { return nil }
-        return Lang().languages[lang] == nil ? nil : lang
+        return Lang.languages[lang] == nil ? nil : lang
     }
 }
