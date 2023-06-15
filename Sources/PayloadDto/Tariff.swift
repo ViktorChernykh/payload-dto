@@ -9,7 +9,7 @@ public enum Tariff: String, Codable {
     case free
     case start
     case business
-    case unlimited
+    case enterprise
 }
 
 extension Tariff {
@@ -25,7 +25,7 @@ extension Tariff {
             return 100
         case .business:
             return 2_500
-        case .unlimited:
+        case .enterprise:
             return 50_000
         }
     }

@@ -5,8 +5,8 @@
 //  Created by Victor Chernykh on 29.03.2022.
 //
 
-public struct Lang: Codable {
-    public static var languages: [String: String] {
+public enum Lang {
+    public static let languages =
     [
         "ab": "Abkhazian",
         "aa": "Afar",
@@ -191,8 +191,8 @@ public struct Lang: Codable {
         "yo": "Yoruba",
         "za": "Zhuang, Chuang",
         "zu": "Zulu"]
-    }
-    public static let langs = [
+
+public static let langs: Set<String> = [
         "ab",
         "aa",
         "af",
@@ -377,10 +377,7 @@ public struct Lang: Codable {
         "za",
         "zu",
     ]
-    
-    // MARK: - Init
-    public init() { }
-    
+
     public static func validate(lang: String?) -> String? {
         guard let lang = lang else { return nil }
         return Lang.languages[lang] == nil ? nil : lang
