@@ -39,4 +39,8 @@ public struct UserPayload: Codable {
         self.sub = sub
         self.tariff = tariff
     }
+
+	var json: String {
+		"{\"currency\":\"\(currency)\",\"companyId\":\"\(companyId)\",\"isAdmin\":\(isAdmin),\"lang\":\"\(lang)\",\"role\":\"\(role.rawValue)\",\"section\":\"\(section)\",\"sub\":\"\(sub)\",\"tariff\":\"\(tariff.rawValue)\"}"
+	}
 }
