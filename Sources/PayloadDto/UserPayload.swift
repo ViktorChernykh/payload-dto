@@ -10,18 +10,22 @@ import Foundation
 /// Payload data for micro services
 public struct UserPayload: Codable {
     // MARK: - Stored properties
-    public let currency: String
-    public let companyId: UUID
-    public let isAdmin: Bool
-    public let lang: String
-    public let role: RoleType
-    public let section: String
-    public let sub: UUID
-    public let tariff: Tariff
+	public let currency: String
+	public let exp: Double
+	public let jti: UUID
+	public let companyId: UUID
+	public let isAdmin: Bool
+	public let lang: String
+	public let role: RoleType
+	public let section: String
+	public let sub: UUID
+	public let tariff: Tariff
     
     // MARK: - Init
     public init(
         currency: String,
+		exp: Double,
+		jti: UUID,
         companyId: UUID,
         isAdmin: Bool,
         lang: String,
@@ -31,6 +35,8 @@ public struct UserPayload: Codable {
         tariff: Tariff
     ) {
         self.currency = currency
+        self.exp = exp
+        self.jti = jti
         self.companyId = companyId
         self.isAdmin = isAdmin
         self.lang = lang
@@ -39,8 +45,4 @@ public struct UserPayload: Codable {
         self.sub = sub
         self.tariff = tariff
     }
-
-	public var json: String {
-		"{\"currency\":\"\(currency)\",\"companyId\":\"\(companyId)\",\"isAdmin\":\(isAdmin),\"lang\":\"\(lang)\",\"role\":\"\(role.rawValue)\",\"section\":\"\(section)\",\"sub\":\"\(sub)\",\"tariff\":\"\(tariff.rawValue)\"}"
-	}
 }
