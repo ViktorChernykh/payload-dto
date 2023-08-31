@@ -8,7 +8,7 @@
 import Foundation
 
 /// Payload data for micro services
-public struct UserPayload: Codable {
+public struct UserPayload: Codable, Sendable {
     // MARK: - Stored properties
 	public let currency: String
 	public let exp: Double

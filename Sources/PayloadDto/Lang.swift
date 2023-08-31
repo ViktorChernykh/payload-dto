@@ -5,7 +5,9 @@
 //  Created by Victor Chernykh on 29.03.2022.
 //
 
-public enum Lang {
+import Foundation
+
+public enum Lang: Sendable {
     public static let languages =
     [
         "ab": "Abkhazian",
