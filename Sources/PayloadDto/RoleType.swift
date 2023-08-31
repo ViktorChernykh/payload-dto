@@ -5,7 +5,7 @@
 //  Created by Victor Chernykh on 07.07.2022.
 //
 
-public enum RoleType: String, CustomStringConvertible, Codable {
+public enum RoleType: String, CustomStringConvertible, Codable, Sendable {
     public static let schema = "role_type"
     
     case guest = "0"

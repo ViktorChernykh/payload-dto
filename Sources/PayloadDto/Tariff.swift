@@ -5,7 +5,7 @@
 //  Created by Victor Chernykh on 07.07.2022.
 //
 
-public enum Tariff: String, Codable {
+public enum Tariff: String, Codable, Sendable {
     case free
     case start
     case business
